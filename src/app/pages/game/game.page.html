@@ -2,7 +2,7 @@
   <ion-toolbar>
     <div class="header-container">
       <ion-avatar>
-        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        <img alt="Avatar of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       </ion-avatar>
       <div class="header-content">
         <ion-title>{{userName}}</ion-title>
@@ -19,7 +19,7 @@
 </ion-header>
 <ion-label>{{ 'GAME.SCORE' | translate }}: {{score}}</ion-label>
 <div class="container">
-  <app-mole></app-mole>
+  <app-mole (score)="updateHit($event)"></app-mole>
 </div>
 <ion-button (click)="toggleGame()">
   {{ isStarted ? 'FIN' : 'Start' }}

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-mole',
@@ -7,6 +7,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class MoleComponent implements AfterViewInit {
   @ViewChild('gameBoard', { static: false }) gameBoard?: ElementRef;
+  @Output() score = new EventEmitter<number>();
   isVisible = false;
   randomLeft: number = 0;
   randomTop: number = 0;
@@ -42,8 +43,8 @@ export class MoleComponent implements AfterViewInit {
     return Math.floor(Math.random() * max);
   }
 
-  logClick() {
-    console.log('Se hizo clic en la imagen');
+  hitMole() {
+    this.score.emit(10);
   }
 
   startGame() {
@@ -53,7 +54,6 @@ export class MoleComponent implements AfterViewInit {
   }
   stopGame() {
     clearInterval(this.intervalId);
-    //  this.router.navigate(['/home']);
   }
 
   ngAfterViewInit(): void {
