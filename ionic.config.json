@@ -1,0 +1,7 @@
+{
+  "name": "mole",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
