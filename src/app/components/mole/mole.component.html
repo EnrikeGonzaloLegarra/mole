@@ -1,0 +1,8 @@
+
+  <div #gameBoard class="game-board">
+    <ng-container *ngIf="isVisible">
+      <div class="image-container" [style.left.px]="randomLeft" [style.top.px]="randomTop" (click)="logClick()">
+        <img src="../../../assets/mole.png" alt="Imagen" />
+      </div>
+    </ng-container>
+  </div>

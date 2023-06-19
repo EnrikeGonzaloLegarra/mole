@@ -8,6 +8,7 @@ import { GamePageRoutingModule } from './game-routing.module';
 
 import { GamePage } from './game.page';
 import {TranslateModule} from "@ngx-translate/core";
+import {MoleComponent} from "../../components/mole/mole.component";
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {TranslateModule} from "@ngx-translate/core";
     GamePageRoutingModule,
     TranslateModule
   ],
-  declarations: [GamePage]
+  declarations: [GamePage, MoleComponent]
 })
 export class GamePageModule {}

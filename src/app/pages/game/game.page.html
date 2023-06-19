@@ -17,3 +17,13 @@
     </div>
   </ion-toolbar>
 </ion-header>
+<ion-label>{{ 'GAME.SCORE' | translate }}: {{score}}</ion-label>
+<div class="container">
+  <app-mole></app-mole>
+</div>
+<ion-button (click)="toggleGame()">
+  {{ isStarted ? 'FIN' : 'Start' }}
+</ion-button>
+
+
+
