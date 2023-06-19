@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header-container">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <div class="header-content">
+        <ion-title>{{userName}}</ion-title>
+        <ion-item lines="none">
+          <ion-select slot="end" placeholder="{{ 'GAME.LEVEL' | translate }}" [(ngModel)]="level" >
+            <ion-select-option value="LOW">{{ 'GAME.LOW' | translate }}</ion-select-option>
+            <ion-select-option value="MEDIUM">{{ 'GAME.MEDIUM' | translate }}</ion-select-option>
+            <ion-select-option value="HIGH">{{ 'GAME.HIGH' | translate }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

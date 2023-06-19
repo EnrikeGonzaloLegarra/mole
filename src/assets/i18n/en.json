@@ -1,0 +1,17 @@
+{
+  "LOGIN":{
+    "USERNAME": "User",
+    "SELECT_LANGUAGE": "Select Language",
+    "START": "Start",
+    "EN": "English",
+    "ES": "Spanish"
+  },
+  "GAME": {
+    "LEVEL": "Level",
+    "LOW": "Low",
+    "MEDIUM": "Medium",
+    "HIGH": "High",
+    "SCORE": "Puntuación",
+    "START": "Start"
+  }
+}
