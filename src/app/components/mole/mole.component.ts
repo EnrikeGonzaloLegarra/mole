@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-mole',
@@ -46,8 +47,7 @@ export class MoleComponent implements AfterViewInit {
   }
 
   hitMole() {
-    console.log(this.gameLevel)
-    this.score.emit(10);
+    this.score.emit(environment.SCORE_HIT);
   }
 
   startGame() {

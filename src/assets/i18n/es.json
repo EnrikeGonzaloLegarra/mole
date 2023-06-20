@@ -13,6 +13,7 @@
     "HIGH": "Alto",
     "SCORE": "Puntuación",
     "TIME": "Tiempo",
-    "START": "Empezar"
+    "START": "Empezar",
+    "CHANGE_USER": "Cambiar usuario"
   }
 }
