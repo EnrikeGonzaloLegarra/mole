@@ -12,6 +12,8 @@
     "MEDIUM": "Medio",
     "HIGH": "Alto",
     "SCORE": "Puntuación",
-    "START": "Empezar"
+    "TIME": "Tiempo",
+    "START": "Empezar",
+    "CHANGE_USER": "Cambiar usuario"
   }
 }

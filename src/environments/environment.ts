@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  GAME_LEVEL:{
+    LOW:1000,
+    MEDIUM:750,
+    HIGH:500
+  },
+  GAME_TIME:60,
+  SCORE_HIT:10
 };
 
 /*
