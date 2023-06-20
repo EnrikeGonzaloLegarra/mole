@@ -12,6 +12,7 @@
     "MEDIUM": "Medium",
     "HIGH": "High",
     "SCORE": "Score",
+    "TIME": "Time",
     "START": "Start"
   }
 }

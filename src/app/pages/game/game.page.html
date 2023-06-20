@@ -8,20 +8,24 @@
         <ion-title>{{userName}}</ion-title>
         <ion-item lines="none">
           <ion-select slot="end" placeholder="{{ 'GAME.LEVEL' | translate }}" [(ngModel)]="level" >
-            <ion-select-option value="LOW">{{ 'GAME.LOW' | translate }}</ion-select-option>
-            <ion-select-option value="MEDIUM">{{ 'GAME.MEDIUM' | translate }}</ion-select-option>
-            <ion-select-option value="HIGH">{{ 'GAME.HIGH' | translate }}</ion-select-option>
+            <ion-select-option value="{{ environment.GAME_LEVEL.LOW }}">{{ 'GAME.LOW' | translate }}</ion-select-option>
+            <ion-select-option value="{{ environment.GAME_LEVEL.MEDIUM }}">{{ 'GAME.MEDIUM' | translate }}</ion-select-option>
+            <ion-select-option value="{{ environment.GAME_LEVEL.HIGH }}">{{ 'GAME.HIGH' | translate }}</ion-select-option>
           </ion-select>
         </ion-item>
       </div>
     </div>
   </ion-toolbar>
 </ion-header>
-<ion-label>{{ 'GAME.SCORE' | translate }}: {{score}}</ion-label>
+<ion-toolbar class="score-time">
+    <ion-label >{{ 'GAME.SCORE' | translate }}: {{ score }}</ion-label>
+    <ion-label>{{ 'GAME.TIME' | translate }}: {{ time }}</ion-label>
+</ion-toolbar>
+
 <div class="container">
-  <app-mole (score)="updateHit($event)"></app-mole>
+  <app-mole [gameLevel]="level" (score)="updateHit($event)"></app-mole>
 </div>
-<ion-button (click)="toggleGame()">
+<ion-button (click)="toggleGame()" [disabled]="level === 0">
   {{ isStarted ? 'FIN' : 'Start' }}
 </ion-button>
 
