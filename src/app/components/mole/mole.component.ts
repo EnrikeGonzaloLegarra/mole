@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-mole',
@@ -8,6 +8,8 @@ import {AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild} f
 export class MoleComponent implements AfterViewInit {
   @ViewChild('gameBoard', { static: false }) gameBoard?: ElementRef;
   @Output() score = new EventEmitter<number>();
+  @Output() time: EventEmitter<number> = new EventEmitter<number>();
+  @Input() gameLevel: number = 0;
   isVisible = false;
   randomLeft: number = 0;
   randomTop: number = 0;
@@ -36,7 +38,7 @@ export class MoleComponent implements AfterViewInit {
 
     setTimeout(() => {
       this.isVisible = !this.isVisible;
-    }, 1000);
+    }, this.gameLevel);
   }
 
   getRandomCoordinate(max: number): number {
@@ -44,6 +46,7 @@ export class MoleComponent implements AfterViewInit {
   }
 
   hitMole() {
+    console.log(this.gameLevel)
     this.score.emit(10);
   }
 

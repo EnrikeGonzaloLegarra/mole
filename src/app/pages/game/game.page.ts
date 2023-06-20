@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {MoleComponent} from "../../components/mole/mole.component";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-game',
@@ -10,9 +11,12 @@ import {MoleComponent} from "../../components/mole/mole.component";
 export class GamePage {
   @ViewChild(MoleComponent, {static: false}) moleComponent?: MoleComponent;
   userName: any;
-  level: string = "LOW";
   score: number = 0;
+  time: number = 0;
   isStarted: boolean = false;
+  level: number = 0;
+  protected readonly environment = environment;
+
   constructor(private router: Router) {
     const userName = localStorage.getItem('sharedData');
     !userName ? this.router.navigate(['/home']) : this.userName = userName;
@@ -21,6 +25,7 @@ export class GamePage {
   startGame() {
    this.moleComponent?.startGame();
   }
+
 
   stopGame() {
   this.moleComponent?.stopGame();
@@ -34,4 +39,5 @@ export class GamePage {
   updateHit(hit: number) {
     this.score += hit;
   }
+
 }
