@@ -30,9 +30,10 @@ export class GamePage {
     this.timeInterval = setInterval(() => {
       this.time = duration;
       duration--;
-      if (duration < 0 || this.timeInterval === undefined) {
-        clearInterval(this.timeInterval);
-        this.time = duration;
+      if (duration <= 0 || this.timeInterval === undefined) {
+        this.stopGame();
+        this.isStarted = false;
+        this.time = environment.GAME_TIME;
       }
     }, 1000);
     this.moleComponent?.startGame();
@@ -64,7 +65,8 @@ export class GamePage {
     });
     await toast.present();
   }
-  changeUser(){
+
+  changeUser() {
     localStorage.removeItem('sharedData');
     this.router.navigate(['/home']);
   }

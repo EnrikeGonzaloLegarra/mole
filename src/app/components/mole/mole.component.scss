@@ -5,9 +5,10 @@
 }
 
 .game-board {
+  margin-left: 10%;
   width: 80%; /* Ancho del tablero de juego al 100% del contenedor padre */
   height: 80vh; /* Alto del tablero de juego al 100% del viewport */
-  background-color: #f0f0f0; /* Color de fondo del tablero */
+  background-color: #64dc28; /* Color de fondo del tablero */
   position: relative;
 }
 
@@ -15,6 +16,5 @@
   position: absolute;
   width: 100px; /* Ancho de la imagen */
   height: 100px; /* Alto de la imagen */
-  background-color: gray; /* Solo para visualizar el contenedor */
   border-radius: 50%; /* Opcional: darle forma circular al contenedor */
 }
