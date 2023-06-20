@@ -25,7 +25,7 @@
 <div class="container">
   <app-mole [gameLevel]="level" (score)="updateHit($event)"></app-mole>
 </div>
-<ion-button (click)="toggleGame()">
+<ion-button (click)="toggleGame()" [disabled]="level === 0">
   {{ isStarted ? 'FIN' : 'Start' }}
 </ion-button>
 
