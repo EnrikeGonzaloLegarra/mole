@@ -20,7 +20,7 @@ export class UserService {
   getUser(){
     return localStorage.getItem('sharedData');
   }
-  saveScore({ username, score }: { username: string; score: number }) {
+  saveScore(username: string, score: number) {
     const jsonData = JSON.stringify({ username, score });
     const encryptedData = AES.encrypt(jsonData, this.secretKey).toString();
     localStorage.setItem('data', encryptedData);
