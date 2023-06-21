@@ -15,7 +15,7 @@
         </ion-item>
         <ion-label >{{ 'GAME.SCORE' | translate }}: {{ score }}</ion-label>
         <ion-label>{{ 'GAME.TIME' | translate }}: {{ time }}</ion-label>
-        <ion-button (click)="changeUser()"> {{ 'GAME.CHANGE_USER' | translate }}</ion-button>
+        <ion-button (click)="changeUser()" [disabled]="isStarted"> {{ 'GAME.CHANGE_USER' | translate }}</ion-button>
       </div>
     </div>
   </ion-toolbar>

@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {MoleComponent} from "../../components/mole/mole.component";
 import {environment} from "../../../environments/environment";
 import {ToastController} from "@ionic/angular";
+import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
 
 @Component({
   selector: 'app-game',
@@ -20,13 +21,16 @@ export class GamePage {
   hitCount: number = 0;
   readonly environment = environment;
 
-  constructor(private router: Router, private toastController: ToastController) {
+  constructor(private router: Router,
+              private toastController: ToastController,
+              private vibration: Vibration) {
     const userName = localStorage.getItem('sharedData');
     !userName ? this.router.navigate(['/home']) : this.userName = userName;
   }
 
   startGame() {
     let duration = environment.GAME_TIME;
+    this.vibration.vibrate(1000);
     this.timeInterval = setInterval(() => {
       this.time = duration;
       duration--;
@@ -44,6 +48,7 @@ export class GamePage {
     this.moleComponent?.stopGame();
     this.time = environment.GAME_TIME;
     clearInterval(this.timeInterval);
+    this.presentToast(`TU PUNTUACION ES ${this.score}`, 'middle')
     this.score = 0;
   }
 
@@ -54,14 +59,15 @@ export class GamePage {
 
   async updateHit(hit: number) {
     this.score += hit;
-    await this.presentToast(this.hitCount++)
+    this.vibration.vibrate(1000);
+    await this.presentToast(`HIT`, 'bottom')
   }
 
-  async presentToast(count: number) {
+  async presentToast(message: string, position: "bottom" | "top" | "middle" | undefined) {
     const toast = await this.toastController.create({
-      message: `HIT ${count}`,
-      duration: 1500,
-      position: 'bottom',
+      message: message,
+      duration: 1000,
+      position: position,
     });
     await toast.present();
   }
