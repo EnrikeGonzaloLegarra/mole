@@ -1,8 +1,6 @@
 # MOLE GAME
-This is a game made with ionic. 
-The game is a simple game where you have to hit the mole as many times as possible in 30 seconds.
-The game is made with ionic and angular.
-
+I have created a variant of the game where, instead of having 9 squares, I implemented a system of random positions where the mole can appear on any side of a green rectangle that simulates grass. This makes the mole's position unpredictable.
+To start the game, you need to select the level. Once the 30-second time limit is over, the application will navigate to a scores window where you can see the different scores.
 
 ## Start the project
 The project is started with the regular ionic commands.
