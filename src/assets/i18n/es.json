@@ -15,5 +15,9 @@
     "TIME": "Tiempo",
     "START": "Empezar",
     "CHANGE_USER": "Cambiar usuario"
+  },
+  "SCORE_LIST": {
+    "TITLE": "Puntuaciónes",
+    "NEW_GAME": "Nuevo Juego"
   }
 }

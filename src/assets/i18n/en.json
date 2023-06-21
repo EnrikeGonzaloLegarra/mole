@@ -15,5 +15,10 @@
     "TIME": "Time",
     "START": "Start",
     "CHANGE_USER": "Change User"
+  },
+  "SCORE_LIST": {
+    "TITLE": "Scores",
+    "NEW_GAME": "New Game"
   }
+
 }

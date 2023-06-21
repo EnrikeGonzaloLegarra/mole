@@ -51,6 +51,8 @@ export class GamePage {
     this.time = environment.GAME_TIME;
     clearInterval(this.timeInterval);
     this.presentToast(`TU PUNTUACION ES ${this.score}`, 'middle')
+
+    this.userService.saveScore(this.userName,this.score);
     this.score = 0;
   }
 
