@@ -49,10 +49,7 @@ export class GamePage {
   stopGame() {
     this.moleComponent?.stopGame();
     this.time = environment.GAME_TIME;
-    clearInterval(this.timeInterval);
-    this.presentToast(`TU PUNTUACION ES ${this.score}`, 'middle')
-
-    this.userService.saveScore(this.userName,this.score);
+    clearInterval(this.timeInterval);this.userService.saveScore(this.userName,this.score);
     this.score = 0;
   }
 
