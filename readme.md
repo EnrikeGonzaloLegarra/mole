@@ -28,6 +28,11 @@ An alternative is to emulate the app on a device or upload it to the ionic cloud
    
 ```
 
+## New Features
+- [x]  Created a score table that is encoded to prevent data alteration. The scores are stored in localStorage /score-list
+- [x]  Timer that is set using environment variables.
+- [x]  added vibration effects when starting the game and when killing a mole.
+
 ## Demo
 You can see a demo of the application [here](https://mole-git-master-enrikegonzalolegarra.vercel.app/home)
 
