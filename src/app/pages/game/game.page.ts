@@ -50,6 +50,7 @@ export class GamePage {
     this.moleComponent?.stopGame();
     this.time = environment.GAME_TIME;
     clearInterval(this.timeInterval);this.userService.saveScore(this.userName,this.score);
+    this.router.navigate(['/score-list']);
     this.score = 0;
   }
 
