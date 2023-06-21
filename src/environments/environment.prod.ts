@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  SECRET_KEY: 'Supercalifragilisticoespialidoso',
   GAME_LEVEL:{
     LOW:1000,
     MEDIUM:750,

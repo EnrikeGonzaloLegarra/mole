@@ -10,7 +10,7 @@ export const environment = {
     MEDIUM:750,
     HIGH:500
   },
-  GAME_TIME:10,
+  GAME_TIME:30,
   SCORE_HIT:10
 };
 
