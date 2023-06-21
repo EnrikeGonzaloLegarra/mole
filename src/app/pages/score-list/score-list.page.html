@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ 'SCORE_LIST.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ 'SCORE_LIST.TITLE' | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let score of scores">
+      <ion-label>{{ score.username }}</ion-label>
+      <ion-badge slot="end">{{ score.score }}</ion-badge>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="gotToGame()"> {{ 'SCORE_LIST.NEW_GAME' | translate }}</ion-button>
+</ion-content>
