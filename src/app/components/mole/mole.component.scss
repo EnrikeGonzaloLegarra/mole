@@ -1,20 +1,20 @@
 .container {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  height: 100vh; /* Alto del contenedor igual al 100% del viewport */
+  justify-content: center;
+  height: 100vh;
 }
 
 .game-board {
   margin-left: 10%;
-  width: 80%; /* Ancho del tablero de juego al 100% del contenedor padre */
-  height: 80vh; /* Alto del tablero de juego al 100% del viewport */
-  background-color: #64dc28; /* Color de fondo del tablero */
+  width: 80%;
+  height: 50vh;
+  background-color: #64dc28;
   position: relative;
 }
 
 .image-container {
   position: absolute;
-  width: 100px; /* Ancho de la imagen */
-  height: 100px; /* Alto de la imagen */
-  border-radius: 50%; /* Opcional: darle forma circular al contenedor */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
