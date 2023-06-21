@@ -48,7 +48,7 @@ describe('GamePage', () => {
   });
 
   it('should present toast', () => {
-    component.presentToast(1);
+    component.presentToast('hit', 'top');
     expect(component.hitCount).toBe(0);
   } );
 

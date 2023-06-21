@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {Router} from "@angular/router";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ export class HomePage {
   defaultLanguageValue: any = this.translate.getDefaultLang();
 
   constructor(private translate: TranslateService,
-              private router: Router) {
+              private router: Router,
+              private userService: UserService) {
     this.defaultLanguageValue = this.translate.getDefaultLang();
   }
 
@@ -21,7 +23,7 @@ export class HomePage {
   }
 
   login() {
-    localStorage.setItem('sharedData', this.user);
+    this.userService.saveUser(this.user);
     this.router.navigate(['/game']);
   }
 }

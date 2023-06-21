@@ -4,6 +4,7 @@ import {MoleComponent} from "../../components/mole/mole.component";
 import {environment} from "../../../environments/environment";
 import {ToastController} from "@ionic/angular";
 import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-game',
@@ -23,8 +24,9 @@ export class GamePage {
 
   constructor(private router: Router,
               private toastController: ToastController,
+              private userService: UserService,
               private vibration: Vibration) {
-    const userName = localStorage.getItem('sharedData');
+    const userName = this.userService.getUser();
     !userName ? this.router.navigate(['/home']) : this.userName = userName;
   }
 
@@ -73,7 +75,7 @@ export class GamePage {
   }
 
   changeUser() {
-    localStorage.removeItem('sharedData');
+    this.userService.deleteUser()
     this.router.navigate(['/home']);
   }
 
