@@ -13,17 +13,15 @@
             <ion-select-option value="{{ environment.GAME_LEVEL.HIGH }}">{{ 'GAME.HIGH' | translate }}</ion-select-option>
           </ion-select>
         </ion-item>
+        <ion-label >{{ 'GAME.SCORE' | translate }}: {{ score }}</ion-label>
+        <ion-label>{{ 'GAME.TIME' | translate }}: {{ time }}</ion-label>
         <ion-button (click)="changeUser()"> {{ 'GAME.CHANGE_USER' | translate }}</ion-button>
       </div>
     </div>
   </ion-toolbar>
 </ion-header>
-<ion-toolbar class="score-time">
-    <ion-label >{{ 'GAME.SCORE' | translate }}: {{ score }}</ion-label>
-    <ion-label>{{ 'GAME.TIME' | translate }}: {{ time }}</ion-label>
-</ion-toolbar>
 
-<div class="container">
+<div class="game-container">
   <app-mole [gameLevel]="level" (score)="updateHit($event)"></app-mole>
 </div>
 <ion-button (click)="toggleGame()" [disabled]="level === 0">
